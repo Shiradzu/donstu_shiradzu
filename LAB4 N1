@@ -1,3 +1,4 @@
+#Лабораторная 
 import math
 
 x = float(input("Введите x: "))
