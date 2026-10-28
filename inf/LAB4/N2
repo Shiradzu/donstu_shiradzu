@@ -1,0 +1,9 @@
+import math
+
+x = float(input("Введите сторону квадрата x: "))
+
+s_square = x ** 2
+s_circle = math.pi * (x / 2) ** 2
+result = s_square - s_circle
+
+print("Площадь квадрата за вычетом круга:", result)
