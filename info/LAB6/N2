@@ -1,0 +1,16 @@
+text = input("Введите текст: ")
+
+result = ""
+prev_space = False
+
+for char in text:
+    if char == " ":
+        if not prev_space:
+            result += char
+            prev_space = True
+    else:
+        result += char
+        prev_space = False
+
+print("Результат без лишних пробелов:")
+print(result)
