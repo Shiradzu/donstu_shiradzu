@@ -1,0 +1,11 @@
+text = input("Введите предложение: ")
+
+count_i = 0
+
+for char in text:
+    if char == ",":
+        break
+    if char == "и" or char == "И":
+        count_i += 1
+
+print("Количество букв 'и' до первой запятой:", count_i)
