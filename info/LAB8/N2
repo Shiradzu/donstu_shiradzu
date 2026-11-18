@@ -1,0 +1,42 @@
+import random
+
+def create_matrix(rows, cols):
+    """Создаёт матрицу заданного размера со случайными действительными числами."""
+    return [
+        [round(random.uniform(-50.0, 50.0), 2) for _ in range(cols)]
+        for _ in range(rows)
+    ]
+
+
+def print_matrix(matrix, name):
+    """Выводит матрицу в консоль."""
+    print(f'Матрица {name}:')
+    for row in matrix:
+        print('  ', '\t'.join(f'{val:6.2f}' for val in row))
+
+
+def find_min_element(matrix):
+    """Возвращает минимальный элемент матрицы, а также номер его строки и столбца (с 1)."""
+    min_val = matrix[0][0]
+    min_row = 0
+    min_col = 0
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if matrix[i][j] < min_val:
+                min_val = matrix[i][j]
+                min_row = i
+                min_col = j
+
+    return min_val, min_row + 1, min_col + 1
+
+A = create_matrix(5, 10)
+B = create_matrix(10, 4)
+
+print_matrix(A, 'A(5, 10)')
+min_a, row_a, col_a = find_min_element(A)
+print(f'Наименьший элемент A: {min_a} (строка {row_a}, столбец {col_a})\n')
+
+print_matrix(B, 'B(10, 4)')
+min_b, row_b, col_b = find_min_element(B)
+print(f'Наименьший элемент B: {min_b} (строка {row_b}, столбец {col_b})')
