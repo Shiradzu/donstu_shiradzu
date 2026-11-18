@@ -1,0 +1,17 @@
+A = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+M = len(A) 
+
+main_sum = 0
+secondary_sum = 0
+
+for i in range(M):
+    main_sum += A[i][i]
+    secondary_sum += A[i][M - 1 - i]
+
+print(f'Сумма элементов главной диагонали: {main_sum}')
+print(f'Сумма элементов побочной диагонали: {secondary_sum}')
