@@ -1,0 +1,17 @@
+def IncTime(H, M, S, T):
+    total_seconds = H * 3600 + M * 60 + S + T
+    
+    H = (total_seconds // 3600) % 24  
+    M = (total_seconds % 3600) // 60
+    S = total_seconds % 60
+    
+    return H, M, S
+
+H = int(input('Введите часы (H): '))
+M = int(input('Введите минуты (M): '))
+S = int(input('Введите секунды (S): '))
+T = int(input('Введите количество секунд для добавления (T): '))
+
+H, M, S = IncTime(H, M, S, T)
+
+print(f'Новое время: {H:02d}:{M:02d}:{S:02d} (H={H}, M={M}, S={S})')
