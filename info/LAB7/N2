@@ -1,0 +1,15 @@
+Capitals = {
+    'Япония': 'Токио',
+    'Италия': 'Рим',
+    'Россия': 'Москва',
+    'Франция': 'Париж'
+}
+
+country = input('Введите название страны: ').strip()
+
+capital = Capitals.get(country)
+
+if capital is not None:
+    print(f'Столица страны {country} — {capital}.')
+else:
+    print('Страна не найдена в словаре.')
